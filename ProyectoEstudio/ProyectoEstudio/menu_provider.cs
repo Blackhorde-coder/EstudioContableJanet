@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace ProyectoEstudio
 {
-    public partial class menu_providers : Form
+    public partial class menu_provider : Form
     {
 
-        Manipulationcls bd = new Manipulationcls(@"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = E:\Hernan\Estudio Contable Janet\ProyectoEstudio\EstudioJanet.mdb");
+        Manipulationcls bd = new Manipulationcls(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Blackhorde\Documents\GitHub\EstudioContableJanet\ProyectoEstudio\EstudioJanet.mdb");
         DataTable tbl = new DataTable();
         int c;
         const int tam = 1000;
         Consortiumcls[] arraycons = new Consortiumcls[tam];
         bool nuevo;
 
-        public menu_providers()
+        public menu_provider()
         {
             InitializeComponent();
             activarbotones(false);

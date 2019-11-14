@@ -253,7 +253,7 @@
             this.Controls.Add(this.txtCuit);
             this.Controls.Add(this.txtNombre);
             this.Name = "menu_consort";
-            this.Text = "menu_consort";
+            this.Text = "MENU CONSORCIOS";
             this.Load += new System.EventHandler(this.menu_consort_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -19,8 +19,7 @@ namespace ProyectoEstudio
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            menu_providers mp = new menu_providers();
-            mp.ShowDialog();
+          
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
@@ -32,6 +31,18 @@ namespace ProyectoEstudio
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void documentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            menu_documento md = new menu_documento();
+            md.ShowDialog();
+        }
+
+        private void comprarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            menu_provider mp = new menu_provider();
+            mp.ShowDialog();
         }
     }
 }

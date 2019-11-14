@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="checkcls.cs" />
     <Compile Include="Consortiumcls.cs" />
+    <Compile Include="menu_documento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu_documento.Designer.cs">
+      <DependentUpon>menu_documento.cs</DependentUpon>
+    </Compile>
     <Compile Include="menu_consort.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,11 +67,11 @@
       <DependentUpon>menu_principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Manipulationcls.cs" />
-    <Compile Include="menu_providers.cs">
+    <Compile Include="menu_provider.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="menu_providers.Designer.cs">
-      <DependentUpon>menu_providers.cs</DependentUpon>
+    <Compile Include="menu_provider.Designer.cs">
+      <DependentUpon>menu_provider.cs</DependentUpon>
     </Compile>
     <Compile Include="opcls.cs" />
     <Compile Include="Program.cs" />
@@ -75,11 +81,14 @@
     <EmbeddedResource Include="menu_consort.resx">
       <DependentUpon>menu_consort.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="menu_documento.resx">
+      <DependentUpon>menu_documento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="menu_principal.resx">
       <DependentUpon>menu_principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="menu_providers.resx">
-      <DependentUpon>menu_providers.cs</DependentUpon>
+    <EmbeddedResource Include="menu_provider.resx">
+      <DependentUpon>menu_provider.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

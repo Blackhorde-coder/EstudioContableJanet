@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 namespace ProyectoEstudio
 {
-    partial class menu_providers
+    partial class menu_provider
     {
         /// <summary>
         /// Required designer variable.
@@ -247,7 +247,7 @@ namespace ProyectoEstudio
             this.label8.TabIndex = 26;
             this.label8.Text = "PROVEEDORES";
             // 
-            // menu_providers
+            // menu_provider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -274,8 +274,8 @@ namespace ProyectoEstudio
             this.Controls.Add(this.cmbCondicion_iva);
             this.Controls.Add(this.txtCuit);
             this.Controls.Add(this.txtRazonSocial);
-            this.Name = "menu_providers";
-            this.Text = "menu_providers";
+            this.Name = "menu_provider";
+            this.Text = "MENU PROVEEDORES";
             this.Load += new System.EventHandler(this.menu_providers_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
