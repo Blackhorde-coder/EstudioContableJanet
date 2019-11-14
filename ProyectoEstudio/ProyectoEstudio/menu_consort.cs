@@ -12,7 +12,7 @@ namespace ProyectoEstudio
 {
     public partial class menu_consort : Form
     {
-        Manipulationcls bd = new Manipulationcls(@"Provider = Microsoft.Jet.OLEDB.4.0; Data Source = E:\Hernan\Estudio Contable Janet\ProyectoEstudio\EstudioJanet.mdb");
+        Manipulationcls bd = new Manipulationcls(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Blackhorde\Documents\GitHub\EstudioContableJanet\ProyectoEstudio\EstudioJanet.mdb");
         DataTable tbl = new DataTable();
         int c;
         const int tam = 1000;
@@ -144,25 +144,25 @@ namespace ProyectoEstudio
         {
             int c = 0;
             bd.leertabla(nomtabla);
-            while (bd.Reader.Read())
+            while (bd.Leer.Read())
             {
                 Consortiumcls cons = new Consortiumcls();
-                if(!bd.Reader.IsDBNull(0))
-                    cons.Idconsortium = bd.Reader.GetInt32(0);
-                if (!bd.Reader.IsDBNull(1))
-                    cons.Name = bd.Reader.GetString(1);
-                if (!bd.Reader.IsDBNull(2))
-                    cons.Cuit = bd.Reader.GetDouble(2);
-                if (!bd.Reader.IsDBNull(3))
-                    cons.Address = bd.Reader.GetString(3);
-                if (!bd.Reader.IsDBNull(4))
-                    cons.Number = bd.Reader.GetInt32(4);
-                if (!bd.Reader.IsDBNull(5))
-                    cons.District = bd.Reader.GetString(5);
+                if(!bd.Leer.IsDBNull(0))
+                    cons.Idconsortium = bd.Leer.GetInt32(0);
+                if (!bd.Leer.IsDBNull(1))
+                    cons.Name = bd.Leer.GetString(1);
+                if (!bd.Leer.IsDBNull(2))
+                    cons.Cuit = bd.Leer.GetDouble(2);
+                if (!bd.Leer.IsDBNull(3))
+                    cons.Address = bd.Leer.GetString(3);
+                if (!bd.Leer.IsDBNull(4))
+                    cons.Number = bd.Leer.GetInt32(4);
+                if (!bd.Leer.IsDBNull(5))
+                    cons.District = bd.Leer.GetString(5);
                 arraycons[c] = cons;
                 c++;
             }
-            bd.Reader.Close();
+            bd.Leer.Close();
             bd.desconectar();
             listBox1.Items.Clear();
             for (int i = 0; i < c; i++)

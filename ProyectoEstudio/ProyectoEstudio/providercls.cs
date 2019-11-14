@@ -15,6 +15,7 @@ namespace ProyectoEstudio
         string _address;
         int _number;
         string _observation;
+        string _email;
 
         public int Idprovider { get => _idprovider; set => _idprovider = value; }
         public string Reason { get => _reason; set => _reason = value; }
@@ -23,8 +24,9 @@ namespace ProyectoEstudio
         public string Address { get => _address; set => _address = value; }
         public int Number { get => _number; set => _number = value; }
         public string Observation { get => _observation; set => _observation = value; }
+        public string Email { get => _email; set => _email = value; }
 
-        public providercls(int id, string reason, int cuit, int icondition, string addr, int num, string observa)
+        public providercls(int id, string reason, int cuit, int icondition, string addr, int num, string observa,string email)
         {
             _idprovider = id;
             _reason = reason;
@@ -33,6 +35,7 @@ namespace ProyectoEstudio
             _address = addr;
             _number = num;
             _observation = observa;
+            _email = email;
         }
         public providercls()
         {
@@ -43,6 +46,7 @@ namespace ProyectoEstudio
             _address = "";
             _number = 0;
             _observation = "";
+            _email = "";
         }
 
 

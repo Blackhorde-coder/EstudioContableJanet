@@ -15,15 +15,16 @@ namespace ProyectoEstudio
 
         Manipulationcls bd = new Manipulationcls(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Blackhorde\Documents\GitHub\EstudioContableJanet\ProyectoEstudio\EstudioJanet.mdb");
         DataTable tbl = new DataTable();
-        int c;
         const int tam = 1000;
-        Consortiumcls[] arraycons = new Consortiumcls[tam];
+        providercls[] arrayprov = new providercls[tam];
         bool nuevo;
 
         public menu_provider()
         {
             InitializeComponent();
             activarbotones(false);
+            cargarcombo(cmbCondicion_iva, "CondicionIva");
+            cargarlista("Proveedores");
 
         }
 
@@ -55,7 +56,8 @@ namespace ProyectoEstudio
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            limpiar();
+            activarbotones(false);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -106,7 +108,50 @@ namespace ProyectoEstudio
             else
                 e.Handled = true;
         }
+        private void cargarcombo(ComboBox combo, string nombretabla)
+        {
+            tbl = bd.consultartabla(nombretabla);
+            combo.DataSource = tbl;
+            combo.ValueMember = tbl.Columns[0].ColumnName;
+            combo.DisplayMember = tbl.Columns[1].ColumnName;
+            combo.SelectedIndex = 0;
+            combo.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+        private void cargarlista(string nombretabla)
+        {
+            bd.leertabla(nombretabla);
+            int c = 0;
+            listBox1.Items.Clear();
+            while (bd.Leer.Read())
+            {
+                providercls p = new providercls();
+                if (!bd.Leer.IsDBNull(0))
+                    p.Idprovider = bd.Leer.GetInt32(0);
+                if (!bd.Leer.IsDBNull(1))
+                    p.Reason = bd.Leer.GetString(1);
+                if (!bd.Leer.IsDBNull(2))
+                    p.Cuit = bd.Leer.GetInt32(2);
+                if (!bd.Leer.IsDBNull(3))
+                    p.Ivacondition = bd.Leer.GetInt32(3);
+                if (!bd.Leer.IsDBNull(4))
+                    p.Address = bd.Leer.GetString(4);
+                if (!bd.Leer.IsDBNull(5))
+                    p.Number = bd.Leer.GetInt32(5);
+                if (!bd.Leer.IsDBNull(6))
+                    p.Observation = bd.Leer.GetString(6);
+                if (!bd.Leer.IsDBNull(7))
+                    p.Email = bd.Leer.GetString(7);
+                arrayprov[c] = p;
+                c++;
+            }
+            bd.Leer.Close();
+            bd.desconectar();
+            for (int i = 0; i < c; i++)
+            {
+                listBox1.Items.Add(arrayprov[i].Reason);
+            }
 
+        }
 
     }
 }

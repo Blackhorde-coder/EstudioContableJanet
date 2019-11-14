@@ -35,7 +35,7 @@ namespace ProyectoEstudio
 
         public OleDbCommand Command { get => _command; set => _command = value; }
         public OleDbConnection Connection { get => _connection; set => _connection = value; }
-        public OleDbDataReader Reader { get => _reader; set => _reader = value; }
+        public OleDbDataReader Leer { get => _reader; set => _reader = value; }
         public string Cadenaconeccion { get => _cadenaconeccion; set => _cadenaconeccion = value; }
         public DataTable Tabla { get => _tabla; set => _tabla = value; }
 

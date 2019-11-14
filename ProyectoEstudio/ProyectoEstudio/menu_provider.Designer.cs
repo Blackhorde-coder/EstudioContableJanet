@@ -90,6 +90,7 @@ namespace ProyectoEstudio
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(65, 20);
             this.txtNumero.TabIndex = 4;
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
             // txtObservacion
             // 
